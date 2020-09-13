@@ -45,25 +45,25 @@ class PostiOS10PhotoCapture: NSObject, YPPhotoCapture, AVCapturePhotoCaptureDele
         // Catpure Highest Quality possible.
         settings.isHighResolutionPhotoEnabled = true
         
-        // Set flash mode.
-        if let deviceInput = deviceInput {
-            if deviceInput.device.isFlashAvailable {
-                switch currentFlashMode {
-                case .auto:
-                    if photoOutput.supportedFlashModes.contains(.auto) {
-                        settings.flashMode = .auto
-                    }
-                case .off:
-                    if photoOutput.supportedFlashModes.contains(.off) {
-                        settings.flashMode = .off
-                    }
-                case .on:
-                    if photoOutput.supportedFlashModes.contains(.on) {
-                        settings.flashMode = .on
-                    }
-                }
-            }
-        }
+        // Set flash mode. (disabled for Xcode beta 6)
+        //if let deviceInput = deviceInput {
+        //    if deviceInput.device.isFlashAvailable {
+        //        switch currentFlashMode {
+        //        case .auto:
+        //            if photoOutput.supportedFlashModes.contains(.auto) {
+        //                settings.flashMode = .auto
+        //            }
+        //        case .off:
+        //            if photoOutput.supportedFlashModes.contains(.off) {
+        //                settings.flashMode = .off
+        //            }
+        //        case .on:
+        //            if photoOutput.supportedFlashModes.contains(.on) {
+        //                settings.flashMode = .on
+        //            }
+        //        }
+        //    }
+        //}
         return settings
     }
     
